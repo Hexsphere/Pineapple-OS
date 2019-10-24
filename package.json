@@ -1,0 +1,28 @@
+{
+  "name": "pineapple-os",
+  "version": "1.0.0",
+  "description": "The code base for Pineapple OS. A web-based OS project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --out-dir ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hexsphere/Pineapple-OS.git"
+  },
+  "author": "Hexsphere and sc15",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Hexsphere/Pineapple-OS/issues"
+  },
+  "homepage": "https://github.com/Hexsphere/Pineapple-OS#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "sass": "^1.23.1"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}

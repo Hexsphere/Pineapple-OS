@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 62.5%;
+  line-height: 1.7;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
