@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>iOS Spinner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><style>
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  background: transparent;
+  margin: 0;
+}
+
+.ios-spinner {
+  display: flex;
+  position: relative;
+  font-size: 1rem;
+  width: 1.75em;
+  height: 1.75em;
+  padding: .25em;
+  color: #fedf30;
+}
+
+.ios-spinner-blade {
+  position: absolute;
+  left: 50%;
+  width: .125em;
+  height: .3125em;
+  margin-left: -.0625em;
+  background: currentColor;
+  border-radius: .05em;
+  transform-origin: 50% .625em;
+  opacity: .2;
+  animation: spinner-blade-opacity 960ms infinite;
+}
+
+.ios-spinner-blade:nth-child(2) {
+  transform: rotateZ(30deg);
+  animation-delay: 80ms;
+}
+
+.ios-spinner-blade:nth-child(3) {
+  transform: rotateZ(60deg);
+  animation-delay: 160ms;
+}
+
+.ios-spinner-blade:nth-child(4) {
+  transform: rotateZ(90deg);
+  animation-delay: 240ms;
+}
+
+.ios-spinner-blade:nth-child(5) {
+  transform: rotateZ(120deg);
+  animation-delay: 320ms;
+}
+
+.ios-spinner-blade:nth-child(6) {
+  transform: rotateZ(150deg);
+  animation-delay: 400ms;
+}
+
+.ios-spinner-blade:nth-child(7) {
+  transform: rotateZ(180deg);
+  animation-delay: 480ms;
+}
+
+.ios-spinner-blade:nth-child(8) {
+  transform: rotateZ(210deg);
+  animation-delay: 560ms;
+}
+
+.ios-spinner-blade:nth-child(9) {
+  transform: rotateZ(240deg);
+  animation-delay: 640ms;
+}
+
+.ios-spinner-blade:nth-child(10) {
+  transform: rotateZ(270deg);
+  animation-delay: 720ms;
+}
+
+.ios-spinner-blade:nth-child(11) {
+  transform: rotateZ(300deg);
+  animation-delay: 800ms;
+}
+
+.ios-spinner-blade:nth-child(12) {
+  transform: rotateZ(330deg);
+  animation-delay: 880ms;
+}
+
+.ios-spinner-blade:nth-child(13) {
+  transform: rotateZ(360deg);
+  animation-delay: 960ms;
+}
+
+@keyframes spinner-blade-opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: .2;
+  }
+}
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="ios-spinner">
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+  <div class="ios-spinner-blade"></div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
