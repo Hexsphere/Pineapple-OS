@@ -4,8 +4,8 @@
   "description": "The code base for Pineapple OS. A web-based OS project.",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir ./public"
+    "start": "parcel index.html appintegration/* --open",
+    "build": "parcel build index.html appintegration/* --out-dir ./public"
   },
   "repository": {
     "type": "git",
