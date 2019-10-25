@@ -1,0 +1,137 @@
+.boot {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &--screen {
+        visibility: hidden;
+        opacity: 0;
+                
+        display: none;        
+        justify-items: center;
+        align-content: center;
+        
+        row-gap: 1.4rem;
+        
+        h3 {
+            color:#fff;
+            margin: 0;
+            margin-top: 2.4rem;
+        }
+        
+        h5 {
+            font-size: 1.8rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        &__2 {
+            row-gap: 2.4rem;
+        }
+
+        transition: opacity .4s ease;
+        
+        &.open {
+            display: grid;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &--progress-bar {
+        width: 30rem;
+        height: .7rem;
+
+        background-color: #5E5E5E;
+        border-radius: 12px;
+        overflow: hidden;
+        
+        &__indicator {
+            height: inherit;
+            transition: width 0.5s ease;
+            width: 0%;
+            background-color: #FEDF30;
+        }
+    }
+    
+    &--card {
+        height: 65rem;
+        width: 100rem;
+
+        display: grid;
+        grid-auto-rows: max-content;
+        row-gap: 2rem;
+        justify-content: center;
+        align-content: center;
+
+        padding: 2.6rem 2.8rem;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #000;
+        font-size: 1.2rem;
+
+        & img {
+            height: 10rem;
+            margin-bottom: .8rem;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        & p {
+            font-size: 2.2rem;
+            margin-bottom: .8rem;
+        }
+
+        &__1 {
+            justify-items: center;
+        }
+    }
+
+    &--card__1 &--btn {
+        justify-self: center;
+    }
+    
+    &--btn {
+        justify-self: start;
+
+        background-color: #fedf30;
+        color:#fff;
+        font-size: 2rem;
+        padding: .6rem 1.8rem;
+        text-decoration: none;
+        border-radius: 4px;
+
+        transition: transform .2s ease, background-color .2s ease;
+
+        &:hover,
+        &:active {
+            transform: translateY(-5px);
+            background-color: #ddc32f;
+        }
+    }
+
+    &--btn__wide {
+        width:100%;
+        display:block;
+        text-align: center;
+    }
+    &--login-error {
+        background:#f00;
+        padding:1rem;
+        border-radius: 12px;
+        h3 {
+            color:#fff;
+            font-size:20px;
+        }
+        p {
+            color:#fff;
+            font-size:10px;
+        }
+    }
+}

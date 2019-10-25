@@ -63,3 +63,4 @@ typings/
 # Parcel folders
 dist
 .cache
+public
