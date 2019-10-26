@@ -47,7 +47,7 @@
       <div class="boot--screen boot--screen__2">
         <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
         <div class="boot--progress-bar">
-          <div class="boot--progress-bar__indicator"></div>
+          <div class="boot--progress-bar__indicator" id="progressBar1"></div>
         </div>
       </div>
 
@@ -56,9 +56,7 @@
           <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h2 class="heading-secondary">Welcome to Pineapple OS!</h2>
           <p>A modern, web-based OS project.</p>
-          <a href="#" class="boot--btn" onclick="loginAndSignup()"
-            >Get started</a
-          >
+          <a href="#" class="boot--btn" id="nextBtn1">Get started</a>
         </div>
       </div>
 
@@ -66,7 +64,7 @@
         <div class="boot--card boot--card__2">
           <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
 
-          <a href="#" class="boot--back-btn">
+          <a href="#" class="boot--back-btn" id="backBtn1">
             <i data-feather="chevron-left"></i>
           </a>
           <h3>Your cloud account</h3>
@@ -74,26 +72,16 @@
             Creating a Pineapple cloud account will sync your OS data and
             personal settings to the cloud.
           </p>
-          <a href="#" class="boot--btn boot--btn__wide" onclick="signup()"
-            >Sign up</a
-          >
-          <a href="#" class="boot--btn boot--btn__wide" onclick="login()"
-            >Log in</a
-          >
+          <a href="#" class="boot--btn" id="nextBtn2">Sign up</a>
+          <a href="#" class="boot--btn" id="nextBtn3">Log in</a>
         </div>
       </div>
 
       <div class="boot--screen boot--screen__5">
         <div class="boot--card boot--card__3">
-          <!-- <div class="boot--login-error">
-            <i data-feather="x-octagon"></i>
-            <h3>Error title</h3>
-            <p>Reason for error and things to fix</p>
-          </div> -->
-
           <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
 
-          <a href="#" class="boot--back-btn">
+          <a href="#" class="boot--back-btn" id="backBtn2">
             <i data-feather="chevron-left"></i>
           </a>
           <h3>Create a cloud account</h3>
@@ -118,43 +106,58 @@
             />
           </div>
 
-          <a href="#" class="boot--btn boot--btn__wide" onclick="startSignup()"
-            >Sign up</a
-          >
+          <a href="#" class="boot--btn" id="nextBtn4">Sign up</a>
           <p class="boot--side-note">
             Additional details can be adjusted in settings.
           </p>
+
+          <div class="boot--login-error">
+            <i data-feather="x-octagon"></i>
+            <h3>Error title:</h3>
+            <p>Reason for error and things to fix</p>
+          </div>
         </div>
       </div>
 
       <div class="boot--screen boot--screen__6">
         <div class="boot--card boot--card__4">
           <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
+          <a href="#" class="boot--back-btn" id="backBtn3">
+            <i data-feather="chevron-left"></i>
+          </a>
           <h3>Log in to your cloud account</h3>
 
-          <label for="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="login--username"
-            placeholder="Username"
-          />
+          <div class="boot--input-box">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="login--username"
+              placeholder="Username"
+            />
+          </div>
 
-          <label for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="login--password"
-            placeholder="••••••"
-          />
+          <div class="boot--input-box">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="login--password"
+              placeholder="••••••"
+            />
+          </div>
 
-          <a href="#" onclick="startLogin()" class="boot--btn boot--btn__wide"
-            >Log in</a
-          >
+          <a href="#" class="boot--btn" id="nextBtn5">Log in</a>
           <p class="boot--side-note">
             All settings will be loaded from the cloud. You can adjust all your
             account details in the settings app.
           </p>
+
+          <div class="boot--login-error">
+            <i data-feather="x-octagon"></i>
+            <h3>Error title:</h3>
+            <p>Reason for error and things to fix</p>
+          </div>
         </div>
       </div>
 
@@ -167,23 +170,19 @@
             <img src="img/light-mode.svg" alt="Desktop light Mode" />
             <h4>Light mode</h4>
 
-            <a href="#" class="boot--btn"
-              ><i data-feather="check-circle"></i
-            ></a>
+            <a href="#" class="boot--btn"><i data-feather="check-circle"></i></a>
           </div>
 
           <div class="boot--theme-box">
             <img src="img/dark-mode.svg" alt="Desktop Dark Mode" />
             <h4>Dark mode</h4>
 
-            <a href="#" class="boot--btn"
-              ><i data-feather="check-circle"></i
-            ></a>
+            <a href="#" class="boot--btn"><i data-feather="check-circle"></i></a>
           </div>
 
-          <a href="#" class="boot--btn">Finish setup</a>
+          <a href="#" class="boot--btn" id="nextBtn6">
           <p class="boot--side-note">Color mode can be changed in settings.</p>
-        </div>
+          </div>
       </div>
 
       <div class="boot--screen boot--screen__8">
@@ -192,7 +191,7 @@
           <h3>Preparing Desktop...</h3>
 
           <div class="boot--progress-bar">
-            <div class="boot--progress-bar__indicator"></div>
+            <div class="boot--progress-bar__indicator" id="progressBar2"></div>
           </div>
         </div>
       </div>
@@ -203,7 +202,7 @@
           <h3>Creating your account...</h3>
 
           <div class="boot--progress-bar">
-            <div class="boot--progress-bar__indicator"></div>
+            <div class="boot--progress-bar__indicator" id="progressBar3"></div>
           </div>
         </div>
       </div>

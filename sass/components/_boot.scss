@@ -175,11 +175,20 @@
     }
   }
 
+  &--card__4 &--back-btn:link,
+  &--card__4 &--back-btn:visited {
+    margin-right: 55rem;
+  }
+
   &--input-box {
     display: grid;
     grid-template-rows: repeat(2, max-content);
     row-gap: 1.2rem;
     margin-right: 5rem;
+  }
+
+  &--card__4 &--input-box {
+    margin-right: 16rem;
   }
 
   &--btn:link,
@@ -205,6 +214,7 @@
 
   &--card__2 &--btn:link,
   &--card__2 &--btn:visited {
+    text-align: center;
     width: 18rem;
   }
 
@@ -213,10 +223,9 @@
     margin-right: 25rem;
   }
 
-  &--btn__wide {
-    width: 100%;
-    display: block;
-    text-align: center;
+  &--card__4 &--btn:link,
+  &--card__4 &--btn:visited {
+    margin-right: 37rem;
   }
 
   &--side-note {
@@ -229,19 +238,54 @@
     margin-right: 4rem;
   }
 
-  &--login-error {
-    background: #f00;
-    padding: 1rem;
-    border-radius: 12px;
+  &--card__4 &--side-note {
+    width: 30rem;
+    margin-right: 16rem;
+  }
+
+  &--login-error,
+  &--signup-error {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-template-rows: max-content;
+    column-gap: 0.6rem;
+    align-items: center;
+
+    background-color: #e53232;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s ease;
+
+    h3,
+    p {
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+
+      margin: 0;
+    }
+
+    .feather {
+      grid-column: 1 / 2;
+
+      margin-right: 0.8rem;
+    }
 
     h3 {
-      color: #fff;
-      font-size: 20px;
+      grid-column: 2 / 3;
     }
 
     p {
-      color: #fff;
-      font-size: 10px;
+      grid-column: 3 / 4;
+    }
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }
