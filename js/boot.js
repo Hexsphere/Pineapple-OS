@@ -77,16 +77,16 @@ window.startSignup = () => {
 
 window.startLogin = () => {
   transitionBootScreen(elements.bootScreen6, elements.bootScreen9);
-  // cloud
-  //   .getSession(elements.loginUname.value, elements.loginPw.value)
-  //   .then(e => {
-  //     if (e.error === 'UNAUTHORIZED') {
-  //       // error
-  //     } else {
-  //       // throw onto desktop
-  //       localStorage.setItem('token', e.data);
-  //     }
-  //   });
+  cloud
+    .getSession(elements.loginUname.value, elements.loginPw.value)
+    .then(e => {
+      if (e.error === 'UNAUTHORIZED') {
+        // error
+      } else {
+        // throw onto desktop
+        localStorage.setItem('token', e.data);
+      }
+    });
 };
 
 function transitionBootScreen(currentElement, nextElement, delay = 400) {
