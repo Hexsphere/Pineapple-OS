@@ -100,6 +100,8 @@ window.startSignup = () => {
         setTimeout(() => {
           elements.signupError.parentElement.classList.remove('open');
         }, 2400);
+
+        transitionBootScreen(elements.bootScreen9, elements.bootScreen5);
       } else {
         cloud
           .getSession(
