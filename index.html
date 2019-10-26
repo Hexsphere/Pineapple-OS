@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Pineapple OS &mdash; A web-based, modern OS</title>
-    <meta description="The code base for Pineapple OS. A web-based OS project." />
+    <meta
+      description="The code base for Pineapple OS. A web-based OS project."
+    />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <meta property="og:title" content="Pineapple OS" />
-    <meta property="og:description" content="The code base for Pineapple OS. A web-based OS project." />
+    <meta
+      property="og:description"
+      content="The code base for Pineapple OS. A web-based OS project."
+    />
     <!-- <meta property="og:image" content="/img/meta-img.png" /> -->
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -26,98 +30,155 @@
     <link rel="stylesheet" href="sass/main.scss" />
     <script src="js/index.js" defer></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="boot">
       <div class="boot--screen boot--screen__1">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
-          <h3 class="heading-tertiary">Click to boot OS...</h3>
-          <h5>(Will full-screen page)</h5>
+        <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
+        <h3 class="heading-tertiary">Click to boot OS...</h3>
+        <h5>(Will full-screen page)</h5>
       </div>
 
       <div class="boot--screen boot--screen__2">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
-          <div class="boot--progress-bar">
-            <div class="boot--progress-bar__indicator"></div>
-          </div>
+        <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
+        <div class="boot--progress-bar">
+          <div class="boot--progress-bar__indicator"></div>
+        </div>
       </div>
 
       <div class="boot--screen boot--screen__3">
         <div class="boot--card boot--card__1">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h2 class="heading-secondary">Welcome to Pineapple OS!</h2>
           <p>A modern, web-based OS project.</p>
-          <a href="#" class="boot--btn" onclick="loginAndSignup()">Get started</a>
+          <a href="#" class="boot--btn" onclick="loginAndSignup()"
+            >Get started</a
+          >
         </div>
       </div>
 
       <div class="boot--screen boot--screen__4">
         <div class="boot--card boot--card__2">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
-          <h3>Your cloud Account</h3>
-          <p>Creating a Pineapple cloud account will sync your OS data and personal settings to the cloud.</p>
-          <a href="#" class="boot--btn boot--btn__wide" onclick="signup()">Sign up</a>
-          <a href="#" class="boot--btn boot--btn__wide" onclick="login()">Log in</a>
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
+
+          <a href="#" class="boot--back-btn">
+            <i data-feather="chevron-left"></i>
+          </a>
+          <h3>Your cloud account</h3>
+          <p>
+            Creating a Pineapple cloud account will sync your OS data and
+            personal settings to the cloud.
+          </p>
+          <a href="#" class="boot--btn boot--btn__wide" onclick="signup()"
+            >Sign up</a
+          >
+          <a href="#" class="boot--btn boot--btn__wide" onclick="login()"
+            >Log in</a
+          >
         </div>
       </div>
 
       <div class="boot--screen boot--screen__5">
         <div class="boot--card boot--card__3">
-          <div class="boot--login-error" style="display:none;">
-            
+          <!-- <div class="boot--login-error">
+            <i data-feather="x-octagon"></i>
             <h3>Error title</h3>
             <p>Reason for error and things to fix</p>
+          </div> -->
+
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
+
+          <a href="#" class="boot--back-btn">
+            <i data-feather="chevron-left"></i>
+          </a>
+          <h3>Create a cloud account</h3>
+
+          <div class="boot--input-box">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="signup--username"
+              placeholder="Username"
+            />
           </div>
 
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
-          <h3>Create a cloud account</h3>
-          
-          <label for="username">Username</label>
-          <input type="text" name="username" id="signup--username">
+          <div class="boot--input-box">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="signup--password"
+              placeholder="••••••••••"
+            />
+          </div>
 
-          <label for="password">Password</label>
-          <input type="password" name="password" id="signup--password">
-
-          <a href="#" class="boot--btn boot--btn__wide" onclick="startSignup()">Sign up</a>
-          <p class="boot--side-note">Additional details can be adjusted in settings.</p>
+          <a href="#" class="boot--btn boot--btn__wide" onclick="startSignup()"
+            >Sign up</a
+          >
+          <p class="boot--side-note">
+            Additional details can be adjusted in settings.
+          </p>
         </div>
       </div>
 
       <div class="boot--screen boot--screen__6">
         <div class="boot--card boot--card__4">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h3>Log in to your cloud account</h3>
-          
+
           <label for="username">Username</label>
-          <input type="text" name="username" id="login--username">
+          <input
+            type="text"
+            name="username"
+            id="login--username"
+            placeholder="Username"
+          />
 
           <label for="password">Password</label>
-          <input type="password" name="password" id="login--password">
+          <input
+            type="password"
+            name="password"
+            id="login--password"
+            placeholder="••••••"
+          />
 
-          <a href="#" onclick="startLogin()" class="boot--btn boot--btn__wide">Log in</a>
-          <p class="boot--side-note">All settings will be loaded from the cloud. You can adjust all your account details in the settings app.</p>
+          <a href="#" onclick="startLogin()" class="boot--btn boot--btn__wide"
+            >Log in</a
+          >
+          <p class="boot--side-note">
+            All settings will be loaded from the cloud. You can adjust all your
+            account details in the settings app.
+          </p>
         </div>
       </div>
 
       <div class="boot--screen boot--screen__7">
         <div class="boot--card boot--card__5">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h3>Choose your theme</h3>
 
           <div class="boot--theme-box">
-            <img src="img/light-mode.svg" alt="Desktop light Mode">
+            <img src="img/light-mode.svg" alt="Desktop light Mode" />
             <h4>Light mode</h4>
 
-            <a href="#" class="boot--btn"><i data-feather="check-circle"></i></a>
+            <a href="#" class="boot--btn"
+              ><i data-feather="check-circle"></i
+            ></a>
           </div>
 
           <div class="boot--theme-box">
-            <img src="img/dark-mode.svg" alt="Desktop Dark Mode">
+            <img src="img/dark-mode.svg" alt="Desktop Dark Mode" />
             <h4>Dark mode</h4>
 
-            <a href="#" class="boot--btn"><i data-feather="check-circle"></i></a>
+            <a href="#" class="boot--btn"
+              ><i data-feather="check-circle"></i
+            ></a>
           </div>
 
           <a href="#" class="boot--btn">Finish setup</a>
@@ -127,7 +188,7 @@
 
       <div class="boot--screen boot--screen__8">
         <div class="boot--card boot--card__6">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h3>Preparing Desktop...</h3>
 
           <div class="boot--progress-bar">
@@ -138,7 +199,7 @@
 
       <div class="boot--screen boot--screen__9">
         <div class="boot--card boot--card__7">
-          <img src="img/pineapple.svg" alt="Pineapple OS Logo">
+          <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h3>Creating your account...</h3>
 
           <div class="boot--progress-bar">
@@ -147,5 +208,5 @@
         </div>
       </div>
     </div>
-</body>
+  </body>
 </html>

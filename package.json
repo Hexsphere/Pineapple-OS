@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html appintegration/* --open",
+    "start:firefox": "parcel index.html appintegration/* --open firefox",
     "build": "parcel build index.html appintegration/* --out-dir ./public"
   },
   "repository": {

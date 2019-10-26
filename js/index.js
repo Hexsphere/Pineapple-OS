@@ -1,5 +1,5 @@
-window.feather = require("feather-icons")
+window.feather = require('feather-icons');
 
-import "./boot.js"
+import './boot.js';
 
 feather.replace();
