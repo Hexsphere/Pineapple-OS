@@ -166,7 +166,11 @@
     grid-row: 1 / 2;
     align-self: end;
     margin-right: 45rem;
+
     line-height: 1;
+
+    outline: none;
+    border: none;
 
     .feather {
       color: #000;
@@ -193,6 +197,9 @@
 
   &--btn:link,
   &--btn:visited {
+    outline: none;
+    border: none;
+
     justify-self: center;
     width: auto;
 
@@ -243,8 +250,8 @@
     margin-right: 16rem;
   }
 
-  &--login-error,
-  &--signup-error {
+  &--card &--login-error,
+  &--card &--signup-error {
     display: grid;
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: max-content;
@@ -253,11 +260,12 @@
 
     background-color: #e53232;
     color: #fff;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
+    border-radius: 6px;
+    padding: 1rem 1.4rem;
+    margin-left: 9rem;
 
-    visibility: hidden;
-    opacity: 0;
+    // visibility: hidden;
+    // opacity: 0;
     transition: all 0.25s ease;
 
     h3,

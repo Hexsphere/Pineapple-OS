@@ -11,10 +11,10 @@ export const elements = {
   bootScreen9: document.querySelector('.boot--screen__9'),
 
   // Account management sectors
-  signupPw: document.querySelector('#signup--password'),
-  signupUname: document.querySelector('#signup--username'),
-  loginPw: document.querySelector('#login--password'),
-  loginUname: document.querySelector('#login--username'),
+  signupPassword: document.querySelector('#signup--password'),
+  signupUsername: document.querySelector('#signup--username'),
+  loginPassword: document.querySelector('#login--password'),
+  loginUsername: document.querySelector('#login--username'),
   signupError: document.querySelector('.boot--signup-error h3'),
   signupErrorDesc: document.querySelector('.boot--signup-error p'),
   loginError: document.querySelector('.boot--login-error h3'),
