@@ -10,6 +10,8 @@ export function showDesktop() {
             internalData = e.data
         } else {
             // invalid token, prompt user to login again
+            elements.desktop.classList.remove("open")
+            elements.cloudError.classList.add("open")
         }
     })
 }

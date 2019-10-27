@@ -43,7 +43,9 @@ export const elements = {
 
   // ## Desktop elements
   desktop: document.querySelector('.desktop'),
-
   // Clock
-  desktopClock: document.querySelector('.menu-bar--clock')
+  desktopClock: document.querySelector('.menu-bar--clock'),
+
+  // ## cloud error
+  cloudError: document.querySelector('.cloud-error')
 };

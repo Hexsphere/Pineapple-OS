@@ -6,6 +6,10 @@
     grid-template-rows: auto 40rem auto;
     visibility: hidden;
     opacity:0;
+    &.open {
+        visibility: visible;
+        opacity:1;
+    }
     &--card {
         width:80rem;
         height:40rem;
