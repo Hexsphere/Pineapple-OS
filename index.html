@@ -242,9 +242,9 @@
       </div>
 
       <div class="dock">
-        <div class="dock--app"><i data-feather="settings"></i></div>
-        <div class="dock--app"><i data-feather="shopping-bag"></i></div>
-        <div class="dock--app"><i data-feather="file-text"></i></div>
+        <div class="dock--app"><div class="dock--app-icon-container"><i data-feather="settings"><div class="dock--app__open-indicator"></div></div></i></div>
+        <div class="dock--app"><div class="dock--app-icon-container"><i data-feather="shopping-bag"><div class="dock--app__open-indicator"></div></div></i></div>
+        <div class="dock--app"><div class="dock--app-icon-container"><i data-feather="file-text"></i></div><div class="dock--app__open-indicator"></div></div>
         <!-- <div class="dock--app"><i data-feather=""></i></div> -->
         <!-- <div class="dock--app"><i data-feather=""></i></div> -->
         <!-- <div class="dock--app"><i data-feather=""></i></div> -->
@@ -252,6 +252,16 @@
         <!-- <div class="dock--app"><i data-feather=""></i></div> -->
         <div class="dock--effect"></div>
       </div>
+    </div>
+    <div class="cloud-error">
+        <div class="cloud-error--card">
+        <i data-feather="cloud-off" class="cloud-error--icon"></i>
+        <h3>Uh oh</h3>
+        <p>It seems like you are logged out of the cloud or your account has been deleted.<br>
+            Please use the button below to log in or create a new account.<br><br>
+            <a href="#" class="cloud-error--button">Clear settings and start setup</a>
+        </p>
+        </div>
     </div>
   </body>
 </html>
