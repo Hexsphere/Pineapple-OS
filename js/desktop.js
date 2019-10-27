@@ -5,6 +5,11 @@ var internalData = {}
 export function showDesktop() {
     elements.desktop.classList.add('open');
     elements.bootScreen8.classList.remove('open');
+    check()
+    setInterval(check, 60000)
+}
+
+function check() {
     cloud.get(localStorage.getItem("username"), localStorage.getItem("token")).then(e => {
         if (e.data) {
             internalData = e.data
@@ -19,7 +24,6 @@ export function showDesktop() {
         }
     })
 }
-
 const updatePrimaryClock = () => {
     elements.desktopClock.childNodes[1].textContent = moment().format('h:mm A');
 };
