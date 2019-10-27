@@ -166,25 +166,35 @@
           <img src="img/pineapple.svg" alt="Pineapple OS Logo" />
           <h3>Choose your theme</h3>
 
-          <div class="boot--theme-box">
-            <img src="img/light-mode.svg" alt="Desktop light Mode" />
-            <h4>Light mode</h4>
+          <div class="boot--themes-parent">
+            <div class="boot--theme-box boot--theme-box__1">
+              <img src="img/light-mode.svg" alt="Desktop light Mode" />
+              <h4>Light mode</h4>
 
-            <a href="#" class="boot--btn"
-              ><i data-feather="check-circle"></i
-            ></a>
+              <a
+                href="#"
+                class="boot--btn boot--btn__icon"
+                id="lightModeCheckbox"
+              >
+                <i data-feather="check-circle"></i>
+              </a>
+            </div>
+
+            <div class="boot--theme-box boot--theme-box__2">
+              <img src="img/dark-mode.svg" alt="Desktop Dark Mode" />
+              <h4>Dark mode</h4>
+
+              <a
+                href="#"
+                class="boot--btn boot--btn__icon"
+                id="darkModeCheckbox"
+              >
+                <i data-feather="check-circle"></i>
+              </a>
+            </div>
           </div>
 
-          <div class="boot--theme-box">
-            <img src="img/dark-mode.svg" alt="Desktop Dark Mode" />
-            <h4>Dark mode</h4>
-
-            <a href="#" class="boot--btn"
-              ><i data-feather="check-circle"></i
-            ></a>
-          </div>
-
-          <a href="#" class="boot--btn" id="nextBtn6"></a>
+          <a href="#" class="boot--btn" id="nextBtn6">Finish setup</a>
           <p class="boot--side-note">Color mode can be changed in settings.</p>
         </div>
       </div>
@@ -209,6 +219,38 @@
             <div class="boot--progress-bar__indicator" id="progressBar3"></div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="desktop">
+      <div class="menu-bar">
+        <div class="menu-bar--clock">
+          <h3>00:00</h3>
+        </div>
+
+        <ul>
+          <li>
+            <a href="#"><i data-feather="smile"></i></a>
+          </li>
+          <li>
+            <a href="#"><i data-feather="cloud"></i></a>
+          </li>
+          <li>
+            <a href="#"><i data-feather="power"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dock">
+        <div class="dock--app"><i data-feather="settings"></i></div>
+        <div class="dock--app"><i data-feather="shopping-bag"></i></div>
+        <div class="dock--app"><i data-feather="file-text"></i></div>
+        <!-- <div class="dock--app"><i data-feather=""></i></div> -->
+        <!-- <div class="dock--app"><i data-feather=""></i></div> -->
+        <!-- <div class="dock--app"><i data-feather=""></i></div> -->
+        <!-- <div class="dock--app"><i data-feather=""></i></div> -->
+        <!-- <div class="dock--app"><i data-feather=""></i></div> -->
+        <div class="dock--effect"></div>
       </div>
     </div>
   </body>

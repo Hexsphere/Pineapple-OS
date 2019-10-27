@@ -1,7 +1,7 @@
 var wrappers = {};
 wrappers.getSession = function(username, password) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/session', {
+    fetch('https://linen-adapter-251001.appspot.com/session', {
       method: 'POST',
       body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' }
@@ -15,9 +15,10 @@ wrappers.getSession = function(username, password) {
       .catch(e => reject(e));
   });
 };
+
 wrappers.newSession = function(username, password) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/session', {
+    fetch('https://linen-adapter-251001.appspot.com/session', {
       method: 'DELETE',
       body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' }
@@ -31,9 +32,10 @@ wrappers.newSession = function(username, password) {
       .catch(e => reject(e));
   });
 };
+
 wrappers.newAccount = function(username, password) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/', {
+    fetch('https://linen-adapter-251001.appspot.com/', {
       method: 'PUT',
       body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' }
@@ -47,9 +49,10 @@ wrappers.newAccount = function(username, password) {
       .catch(e => reject(e));
   });
 };
+
 wrappers.deleteAccount = function(username, password) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/', {
+    fetch('https://linen-adapter-251001.appspot.com/', {
       method: 'DELETE',
       body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' }
@@ -63,9 +66,10 @@ wrappers.deleteAccount = function(username, password) {
       .catch(e => reject(e));
   });
 };
+
 wrappers.update = function(username, password, data) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/update', {
+    fetch('https://linen-adapter-251001.appspot.com/update', {
       method: 'PUT',
       body: JSON.stringify({
         username: username,
@@ -83,9 +87,10 @@ wrappers.update = function(username, password, data) {
       .catch(e => reject(e));
   });
 };
+
 wrappers.get = function(username, password) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/', {
+    fetch('https://linen-adapter-251001.appspot.com/', {
       method: 'POST',
       body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' }
@@ -99,9 +104,10 @@ wrappers.get = function(username, password) {
       .catch(e => reject(e));
   });
 };
+
 wrappers.changePassword = function(username, password, newpw) {
   return new Promise((resolve, reject) => {
-    fetch('https://blue-papyrus.glitch.me/password', {
+    fetch('https://linen-adapter-251001.appspot.com/password', {
       method: 'POST',
       body: JSON.stringify({
         username: username,
@@ -119,4 +125,5 @@ wrappers.changePassword = function(username, password, newpw) {
       .catch(e => reject(e));
   });
 };
+
 module.exports = wrappers;

@@ -1,4 +1,5 @@
 export const elements = {
+  // ## Boot elements
   // Boot screens
   bootScreen1: document.querySelector('.boot--screen__1'),
   bootScreen2: document.querySelector('.boot--screen__2'),
@@ -36,7 +37,13 @@ export const elements = {
   // Onboarding Screen Back Buttons
   backBtn1: document.querySelector('#backBtn1'),
   backBtn2: document.querySelector('#backBtn2'),
-  backBtn3: document.querySelector('#backBtn3')
+  backBtn3: document.querySelector('#backBtn3'),
 
-  // More stuff to come!
+  colorThemeBtns: document.querySelectorAll('.boot--btn__icon'),
+
+  // ## Desktop elements
+  desktop: document.querySelector('.desktop'),
+
+  // Clock
+  desktopClock: document.querySelector('.menu-bar--clock')
 };

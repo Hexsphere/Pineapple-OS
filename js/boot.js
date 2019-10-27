@@ -1,6 +1,7 @@
 // IMPORTS
 let cloud = require('./wrappers');
 import { elements } from './base';
+import { showDesktop } from './desktop';
 
 // CODE
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,19 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // document.addEventListener('click', toggleFullScreen);
 
-  if (
-    document.fullscreen ||
-    document.mozFullScreen ||
-    (window.innerWidth == screen.width && window.innerHeight == screen.height)
-  ) {
-    window.setTimeout(() => {
-      elements.bootScreen2.classList.add('open');
-    }, 400);
-  } else {
-    window.setTimeout(() => {
-      elements.bootScreen6.classList.add('open');
-    }, 400);
-  }
+  // if (
+  //   document.fullscreen ||
+  //   document.mozFullScreen ||
+  //   (window.innerWidth == screen.width && window.innerHeight == screen.height)
+  // ) {
+  //   window.setTimeout(() => {
+  //     elements.bootScreen2.classList.add('open');
+  //   }, 400);
+  // } else {
+  //   window.setTimeout(() => {
+  //     elements.bootScreen1.classList.add('open');
+  //   }, 400);
+  // }
 });
 
 // Get started button
@@ -56,8 +57,24 @@ elements.nextBtn5.addEventListener('click', () => {
 // Finish setup button
 elements.nextBtn6.addEventListener('click', () => {
   transitionBootScreen(elements.bootScreen7, elements.bootScreen8);
-
   progressBar(elements.progressBarInnerDesktop);
+});
+
+elements.colorThemeBtns.forEach(e => {
+  e.onclick = () => {
+    // save preference to database
+    var dataObject = { dark: false, files: {}, appdata: {}, apps: [] };
+    if (e.id.startsWith('dark')) {
+      dataObject.dark = true;
+    } else {
+      dataObject.dark = false;
+    }
+    cloud.update(
+      localStorage.getItem('username'),
+      localStorage.getItem('token'),
+      dataObject
+    );
+  };
 });
 
 elements.backBtn1.addEventListener('click', () => {
@@ -71,17 +88,6 @@ elements.backBtn2.addEventListener('click', () => {
 elements.backBtn3.addEventListener('click', () => {
   transitionBootScreen(elements.bootScreen6, elements.bootScreen4);
 });
-
-function throwToDesktop() {
-  elements.progressBarInnerDesktop.style.width = '0%';
-  setTimeout(() => {
-    var i = progressBar(elements.progressBarInnerDesktop);
-
-    setTimeout(() => {
-      // throw onto desktop
-    }, (i + 1) * 50);
-  }, 2400);
-}
 
 window.startSignup = () => {
   transitionBootScreen(elements.bootScreen5, elements.bootScreen9);
@@ -100,8 +106,9 @@ window.startSignup = () => {
         setTimeout(() => {
           elements.signupError.parentElement.classList.remove('open');
         }, 2400);
-
-        transitionBootScreen(elements.bootScreen9, elements.bootScreen5);
+        setTimeout(() => {
+          transitionBootScreen(elements.bootScreen9, elements.bootScreen5);
+        }, 500);
       } else {
         cloud
           .getSession(
@@ -113,6 +120,8 @@ window.startSignup = () => {
               // error
             } else {
               localStorage.setItem('token', e.data);
+              localStorage.setItem('username', elements.signupUsername.value);
+
               transitionBootScreen(elements.bootScreen9, elements.bootScreen7);
             }
           });
@@ -144,7 +153,10 @@ window.startLogin = () => {
         }, 2400);
       } else {
         localStorage.setItem('token', e.data);
-        transitionBootScreen(elements.bootScreen6, elements.bootScreen7);
+        localStorage.setItem('username', elements.loginUsername.value);
+
+        // transitionBootScreen(elements.bootScreen6, elements.bootScreen7);
+        preparingDesktopProgressBar();
       }
     });
 };
@@ -194,8 +206,8 @@ const bootLoader = () => {
     if (!localStorage.getItem('token')) {
       transitionBootScreen(elements.bootScreen2, elements.bootScreen3);
     } else {
-      transitionBootScreen(elements.bootScreen2, elements.bootScreen8);
-      throwToDesktop();
+      elements.bootScreen2.classList.remove('open');
+      showDesktop();
     }
-  }, (i + 1) * 50);
+  }, (i + 1) * 65);
 };

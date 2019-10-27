@@ -2,6 +2,8 @@
   height: 100vh;
   width: 100%;
 
+  background-color: #000;
+
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
@@ -159,6 +161,10 @@
       font-size: 1.8rem;
       width: 33rem;
     }
+
+    &__5 h3 {
+      margin-right: 22rem;
+    }
   }
 
   &--back-btn:link,
@@ -195,27 +201,60 @@
     margin-right: 16rem;
   }
 
-  &--btn:link,
-  &--btn:visited {
-    outline: none;
-    border: none;
+  &--btn {
+    &:link,
+    &:visited {
+      outline: none;
+      border: none;
 
-    justify-self: center;
-    width: auto;
+      justify-self: center;
+      width: auto;
 
-    background-color: #fedf30;
-    color: #fff;
-    font-size: 2rem;
-    padding: 0.6rem 1.8rem;
-    text-decoration: none;
-    border-radius: 4px;
+      background-color: #fedf30;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.6rem 1.8rem;
+      text-decoration: none;
+      border-radius: 4px;
 
-    transition: transform 0.2s ease, background-color 0.2s ease;
+      transition: transform 0.2s ease, background-color 0.2s ease;
 
-    &:hover,
-    &:active {
-      transform: translateY(-5px);
-      background-color: #ddc32f;
+      &:hover,
+      &:active {
+        transform: translateY(-5px);
+        background-color: #ddc32f;
+      }
+    }
+
+    &__icon:link,
+    &__icon:visited {
+      display: block;
+      background-color: transparent;
+      color: #000;
+      padding: 0;
+      border-radius: 0;
+
+      .feather {
+        width: 2.6rem;
+        height: 2.6rem;
+        color: #d0d0d0;
+
+        transition: color 0.2s ease;
+      }
+
+      &:hover,
+      &:active {
+        background-color: transparent;
+        transform: none;
+
+        .feather {
+          color: #afafaf;
+        }
+      }
+
+      &:focus .feather {
+        color: #4fc123;
+      }
     }
   }
 
@@ -235,6 +274,11 @@
     margin-right: 37rem;
   }
 
+  &--card__5 &--btn:link,
+  &--card__5 &--btn:visited {
+    margin-right: 38.5rem;
+  }
+
   &--side-note {
     margin-top: -1rem;
     font-size: 1.6rem;
@@ -248,6 +292,10 @@
   &--card__4 &--side-note {
     width: 30rem;
     margin-right: 16rem;
+  }
+
+  &--card__5 &--side-note {
+    margin-right: 25.5rem;
   }
 
   &--card &--login-error,
@@ -294,6 +342,49 @@
     &.open {
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  &--themes-parent {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    column-gap: 3rem;
+  }
+
+  &--theme-box {
+    display: grid;
+    row-gap: 0.6rem;
+
+    &__1 {
+      grid-column: 1 / 2 !important;
+    }
+
+    &__2 {
+      grid-column: 2 / 3 !important;
+    }
+
+    img {
+      grid-row: 1 / 2;
+      width: 25rem;
+      height: auto !important;
+    }
+
+    h4,
+    a {
+      grid-row: 2 / 3;
+      line-height: 1;
+      margin: 0 !important;
+    }
+
+    h4 {
+      justify-self: start !important;
+
+      font-size: 2.4rem;
+      font-weight: 500;
+    }
+
+    a {
+      justify-self: end !important;
     }
   }
 }

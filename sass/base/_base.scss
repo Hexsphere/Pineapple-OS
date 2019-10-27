@@ -17,8 +17,16 @@ body {
 }
 
 body {
-  background-color: #000;
   height: 100vh;
   overflow: hidden;
   user-select: none;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+
+  & > div {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+  }
 }
