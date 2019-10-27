@@ -11,21 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     ? document.mozCancelFullScreen().catch(e => {})
     : null;
 
-  // document.addEventListener('click', toggleFullScreen);
+  document.addEventListener('click', toggleFullScreen);
 
-  // if (
-  //   document.fullscreen ||
-  //   document.mozFullScreen ||
-  //   (window.innerWidth == screen.width && window.innerHeight == screen.height)
-  // ) {
-  //   window.setTimeout(() => {
-  //     elements.bootScreen2.classList.add('open');
-  //   }, 400);
-  // } else {
-  //   window.setTimeout(() => {
-  //     elements.bootScreen1.classList.add('open');
-  //   }, 400);
-  // }
+  if (
+    document.fullscreen ||
+    document.mozFullScreen ||
+    (window.innerWidth == screen.width && window.innerHeight == screen.height)
+  ) {
+    window.setTimeout(() => {
+      elements.bootScreen2.classList.add('open');
+    }, 400);
+  } else {
+    window.setTimeout(() => {
+      elements.bootScreen1.classList.add('open');
+    }, 400);
+  }
 });
 
 // Get started button
@@ -57,7 +57,7 @@ elements.nextBtn5.addEventListener('click', () => {
 // Finish setup button
 elements.nextBtn6.addEventListener('click', () => {
   transitionBootScreen(elements.bootScreen7, elements.bootScreen8);
-  progressBar(elements.progressBarInnerDesktop);
+  preparingDesktopProgressBar(elements.bootScreen5)
 });
 
 elements.colorThemeBtns.forEach(e => {
@@ -128,7 +128,12 @@ window.startSignup = () => {
       }
     });
 };
-
+function preparingDesktopProgressBar(prev){
+    transitionBootScreen(prev, elements.bootScreen8);
+    progressBar(elements.progressBarInnerDesktop,()=>{
+        showDesktop()
+    })
+}
 window.startLogin = () => {
   cloud
     .getSession(elements.loginUsername.value, elements.loginPassword.value)
@@ -156,7 +161,7 @@ window.startLogin = () => {
         localStorage.setItem('username', elements.loginUsername.value);
 
         // transitionBootScreen(elements.bootScreen6, elements.bootScreen7);
-        preparingDesktopProgressBar();
+        preparingDesktopProgressBar(elements.bootScreen6);
       }
     });
 };
@@ -185,7 +190,7 @@ const toggleFullScreen = () => {
   }
 };
 
-function progressBar(progressBarInner) {
+function progressBar(progressBarInner,cb = ()=>{}) {
   for (var i = 0; i < 100; i++) {
     var c = Math.random() * 10;
     setTimeout(
@@ -197,6 +202,9 @@ function progressBar(progressBarInner) {
     );
     i += c;
   }
+  setTimeout(() => {
+      cb()
+  }, (i + 1) * 50);
   return i;
 }
 
@@ -209,5 +217,5 @@ const bootLoader = () => {
       elements.bootScreen2.classList.remove('open');
       showDesktop();
     }
-  }, (i + 1) * 65);
+  }, (i + 1) * 50);
 };
