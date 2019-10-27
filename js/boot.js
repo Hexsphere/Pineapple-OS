@@ -149,7 +149,7 @@ window.startLogin = () => {
         }, 2400);
       } else if (e.error === 'USERNAME_NOT_FOUND') {
         feather.replace();
-        elements.loginError.textContent = "Username or Password Doesn't Exist:";
+        elements.loginError.textContent = "Account Doesn't Exist:";
         elements.loginErrorDesc.textContent = 'Please try again.';
 
         elements.loginError.parentElement.classList.add('open');
