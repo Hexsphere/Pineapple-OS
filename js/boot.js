@@ -5,11 +5,6 @@ import { showDesktop } from './desktop';
 
 // CODE
 document.addEventListener('DOMContentLoaded', () => {
-    document.exitFullscreen().catch(e => {});
-
-    document.mozCancelFullScreen ?
-        document.mozCancelFullScreen().catch(e => {}) :
-        null;
 
     document.addEventListener('click', toggleFullScreen);
 
@@ -181,7 +176,7 @@ window.transitionBootScreen = function transitionBootScreen(
 const toggleFullScreen = () => {
     removeEventListener('click', toggleFullScreen);
     if (elements.bootScreen1.classList.contains('open')) {
-        document.body.requestFullscreen();
+        document.body.requestFullscreen ? document.body.requestFullscreen() : document.body.webkitRequestFullscreen()
 
         transitionBootScreen(elements.bootScreen1, elements.bootScreen2, 1300);
 
