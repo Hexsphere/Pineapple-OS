@@ -214,4 +214,20 @@ const bootLoader = () => {
             showDesktop();
         }
     }, (i + 1) * 50);
+    window.fullscreenStatus = true;
+    setInterval(() => {
+        if (!document.fullscreen && fullscreenStatus) {
+            var el = document.querySelector(".desktop.open") || document.querySelector(".alerts > .open") || document.querySelector(".boot > .open")
+            transitionBootScreen(el, elements.fullScreenPrompt)
+            var listener = () => {
+                document.body.requestFullscreen ? document.body.requestFullscreen() : document.body.webkitRequestFullscreen()
+                transitionBootScreen(elements.fullScreenPrompt, el)
+                removeEventListener("click", listener)
+            }
+            setTimeout(() => {
+                addEventListener("click", listener)
+            }, 500);
+        }
+        fullscreenStatus = document.fullscreen
+    }, 1000)
 };

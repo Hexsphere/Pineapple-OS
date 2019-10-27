@@ -12,6 +12,7 @@
         background: #fff;
     }
     &--alert {
+        transform: translateY(30rem);
         transition: all 0.4s ease;
         position: absolute;
         top: 0;
@@ -26,6 +27,7 @@
         &.open {
             visibility: visible;
             opacity: 1;
+            transform: translateY(0);
         }
     }
     &--icon {

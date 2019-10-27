@@ -9,7 +9,7 @@ elements.feedbackAssistantSubmitButton.addEventListener("click", () => {
     var listener = () => {
         document.body.requestFullscreen ? document.body.requestFullscreen() : document.body.webkitRequestFullscreen()
         transitionBootScreen(elements.fullScreenPrompt, elements.desktop)
-        removeEventListener(listener)
+        removeEventListener("click", listener)
     }
     setTimeout(() => {
         addEventListener("click", listener)
