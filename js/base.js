@@ -48,5 +48,20 @@ export const elements = {
 
   // ## cloud error
   cloudError: document.querySelector('.cloud-error'),
-  cloudErrorButton: document.querySelector('.cloud-error--btn')
+  cloudErrorButton: document.querySelector('.cloud-error--btn'),
+  // ## feedback assistant
+  feedbackAssistant: document.querySelector('.feedback-assistant'),
+  feedbackAssistantCancelButton: document.querySelector(
+    '.feedback-assistant--btn__cancel'
+  ),
+  feedbackAssistantSubmitButton: document.querySelector(
+    '.feedback-assistant--btn__open'
+  ),
+  feedbackAssistantTextarea: document.querySelector(
+    '.feedback-assistant--textarea'
+  ),
+  feedbackAssistantTopbarButton: document.querySelector(
+    '.menu-bar--icon__feedback'
+  ),
+  fullScreenPrompt: document.querySelector('.fullscreen-prompt')
 };

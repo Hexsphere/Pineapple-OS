@@ -223,6 +223,51 @@
     </div>
 
     <div class="alerts">
+      <div class="cloud-error alerts--alert">
+        <div class="cloud-error--card alerts--card">
+          <i data-feather="cloud-off" class="cloud-error--icon"></i>
+          <h3>Cloud Account Sync Error</h3>
+          <p>
+            It seems like you are logged out of the cloud or your account has
+            been deleted. Please use the button below to log in or create a new
+            account.
+            <br /><br />
+
+            <a href="#" class="cloud-error--btn"
+              >Clear settings and start setup</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="alerts--alert fullscreen-prompt">
+        <div class="alerts--card">
+          <i data-feather="monitor" class="alerts--icon"></i>
+          <h3>Fullscreen off</h3>
+          <p>Click to continue.</p>
+        </div>
+      </div>
+      <div class="feedback-assistant alerts--alert">
+        <div class="alerts--card">
+          <i data-feather="smile" class="alerts--icon"></i>
+          <h3>Feedback Assistant</h3>
+          <p>
+            <textarea
+              class="feedback-assistant--textarea alerts--textarea"
+            ></textarea
+            ><br /><br />
+
+            <a href="#" class="feedback-assistant--btn__open alerts--btn"
+              >Open mail client with template</a
+            >
+            <a href="#" class="feedback-assistant--btn__cancel alerts--btn"
+              >Cancel</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="alerts">
       <div class="cloud-error">
         <div class="cloud-error--card">
           <i data-feather="cloud-off" class="cloud-error--icon"></i>
@@ -248,7 +293,9 @@
 
         <ul>
           <li>
-            <a href="#"><i data-feather="smile"></i></a>
+            <a href="#" class="menu-bar--icon__feedback"
+              ><i data-feather="smile"></i
+            ></a>
           </li>
           <li>
             <a href="#"><i data-feather="cloud"></i></a>

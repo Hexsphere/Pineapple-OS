@@ -1,390 +1,312 @@
 .boot {
-  height: 100vh;
-  width: 100%;
-
-  background-color: #000;
-
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
-
-  &--screen {
-    grid-row: 1 / -1;
-    grid-column: 1 / -1;
-
-    height: 100%;
+    height: 100vh;
     width: 100%;
-
+    background-color: #000;
     display: grid;
-    justify-items: center;
-    align-content: center;
-    row-gap: 1.4rem;
-
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.8s ease;
-
-    h3 {
-      color: #fff;
-      margin: 0;
-      margin-top: 2.4rem;
-    }
-
-    h5 {
-      font-size: 1.8rem;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    &__2 {
-      row-gap: 2.4rem;
-    }
-
-    &.open {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &--progress-bar {
-    width: 30rem;
-    height: 0.7rem;
-
-    background-color: #5e5e5e;
-    border-radius: 12px;
-    overflow: hidden;
-
-    &__indicator {
-      height: inherit;
-      transition: width 0.5s ease;
-      width: 0%;
-      background-color: #fedf30;
-    }
-  }
-
-  &--card {
-    height: 65rem;
-    width: 100rem;
-
-    display: grid;
-    grid-auto-rows: max-content;
-    row-gap: 2rem;
-
-    padding: 2.6rem 2.8rem;
-    border-radius: 6px;
-    background-color: #fff;
-    color: #000;
-    font-size: 1.2rem;
-
-    & img {
-      height: 10rem;
-      margin-bottom: 0.8rem;
-    }
-
-    h2 {
-      margin: 0;
-    }
-
-    h3 {
-      grid-row: 1 / 2;
-
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      font-size: 3.8rem;
-      line-height: 1;
-      color: #000;
-    }
-
-    & p:not(.boot--side-note) {
-      font-size: 2.2rem;
-      margin-bottom: 0.8rem;
-    }
-
-    input {
-      width: 30rem;
-      padding: 1.4rem 1.2rem;
-      background-color: #fff;
-      border: 3px solid #000;
-      border-radius: 6px;
-
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.6rem;
-
-      transition: transform 0.2s ease, box-shadow 0.2s ease,
-        border-color 0.2s ease;
-
-      &[name='password'] {
-        &::placeholder {
-          letter-spacing: 0.2rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    &--screen {
+        transform: translateY(30rem);
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        row-gap: 1.4rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.8s ease;
+        h3 {
+            color: #fff;
+            margin: 0;
+            margin-top: 2.4rem;
         }
-      }
-
-      &:focus {
-        transform: translateX(5px);
-        box-shadow: 0 0 3.2rem rgba(0, 0, 0, 0.12);
-      }
+        h5 {
+            font-size: 1.8rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+        &__2 {
+            row-gap: 2.4rem;
+        }
+        &.open {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-
-    label {
-      justify-self: start;
-      font-size: 2.4rem;
-      font-weight: 500;
-      line-height: 1;
+    &--progress-bar {
+        width: 30rem;
+        height: 0.7rem;
+        background-color: #5e5e5e;
+        border-radius: 12px;
+        overflow: hidden;
+        &__indicator {
+            height: inherit;
+            transition: width 0.5s ease;
+            width: 0%;
+            background-color: #fedf30;
+        }
     }
-
-    &__1 {
-      justify-items: center;
-      align-content: center;
+    &--card {
+        height: 65rem;
+        width: 100rem;
+        display: grid;
+        grid-auto-rows: max-content;
+        row-gap: 2rem;
+        padding: 2.6rem 2.8rem;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #000;
+        font-size: 1.2rem;
+        & img {
+            height: 10rem;
+            margin-bottom: 0.8rem;
+        }
+        h2 {
+            margin: 0;
+        }
+        h3 {
+            grid-row: 1 / 2;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 3.8rem;
+            line-height: 1;
+            color: #000;
+        }
+        & p:not(.boot--side-note) {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        input {
+            width: 30rem;
+            padding: 1.4rem 1.2rem;
+            background-color: #fff;
+            border: 3px solid #000;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            &[name='password'] {
+                &::placeholder {
+                    letter-spacing: 0.2rem;
+                }
+            }
+            &:focus {
+                transform: translateX(5px);
+                box-shadow: 0 0 3.2rem rgba(0, 0, 0, 0.12);
+            }
+        }
+        label {
+            justify-self: start;
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+        &__1 {
+            justify-items: center;
+            align-content: center;
+        }
+        &:not(&__1) {
+            grid-template-columns: 100%;
+            & *:not(label) {
+                grid-column: 1 / 2;
+                justify-self: center;
+            }
+            img {
+                justify-self: start;
+                grid-row: 1 / 2;
+                height: 8rem;
+            }
+            h3 {
+                margin-top: 10rem;
+            }
+        }
+        &__2 p {
+            font-size: 1.8rem;
+            width: 33rem;
+        }
+        &__5 h3 {
+            margin-right: 22rem;
+        }
     }
-
-    &:not(&__1) {
-      grid-template-columns: 100%;
-
-      & *:not(label) {
-        grid-column: 1 / 2;
-        justify-self: center;
-      }
-
-      img {
-        justify-self: start;
+    &--back-btn:link,
+    &--back-btn:visited {
         grid-row: 1 / 2;
-        height: 8rem;
-      }
-
-      h3 {
-        margin-top: 10rem;
-      }
-    }
-
-    &__2 p {
-      font-size: 1.8rem;
-      width: 33rem;
-    }
-
-    &__5 h3 {
-      margin-right: 22rem;
-    }
-  }
-
-  &--back-btn:link,
-  &--back-btn:visited {
-    grid-row: 1 / 2;
-    align-self: end;
-    margin-right: 45rem;
-
-    line-height: 1;
-
-    outline: none;
-    border: none;
-
-    .feather {
-      color: #000;
-      width: 3.4rem;
-      height: 3.4rem;
-    }
-  }
-
-  &--card__4 &--back-btn:link,
-  &--card__4 &--back-btn:visited {
-    margin-right: 55rem;
-  }
-
-  &--input-box {
-    display: grid;
-    grid-template-rows: repeat(2, max-content);
-    row-gap: 1.2rem;
-    margin-right: 5rem;
-  }
-
-  &--card__4 &--input-box {
-    margin-right: 16rem;
-  }
-
-  &--btn {
-    &:link,
-    &:visited {
-      outline: none;
-      border: none;
-
-      justify-self: center;
-      width: auto;
-
-      background-color: #fedf30;
-      color: #fff;
-      font-size: 2rem;
-      padding: 0.6rem 1.8rem;
-      text-decoration: none;
-      border-radius: 4px;
-
-      transition: transform 0.2s ease, background-color 0.2s ease;
-
-      &:hover,
-      &:active {
-        transform: translateY(-5px);
-        background-color: #ddc32f;
-      }
-    }
-
-    &__icon:link,
-    &__icon:visited {
-      display: block;
-      background-color: transparent;
-      color: #000;
-      padding: 0;
-      border-radius: 0;
-
-      .feather {
-        width: 2.6rem;
-        height: 2.6rem;
-        color: #d0d0d0;
-
-        transition: color 0.2s ease;
-      }
-
-      &:hover,
-      &:active {
-        background-color: transparent;
-        transform: none;
-
+        align-self: end;
+        margin-right: 45rem;
+        line-height: 1;
+        outline: none;
+        border: none;
         .feather {
-          color: #afafaf;
+            color: #000;
+            width: 3.4rem;
+            height: 3.4rem;
         }
-      }
-
-      &:focus .feather {
-        color: #4fc123;
-      }
     }
-  }
-
-  &--card__2 &--btn:link,
-  &--card__2 &--btn:visited {
-    text-align: center;
-    width: 18rem;
-  }
-
-  &--card__3 &--btn:link,
-  &--card__3 &--btn:visited {
-    margin-right: 25rem;
-  }
-
-  &--card__4 &--btn:link,
-  &--card__4 &--btn:visited {
-    margin-right: 37rem;
-  }
-
-  &--card__5 &--btn:link,
-  &--card__5 &--btn:visited {
-    margin-right: 38.5rem;
-  }
-
-  &--side-note {
-    margin-top: -1rem;
-    font-size: 1.6rem;
-    font-weight: 300;
-  }
-
-  &--card__3 &--side-note {
-    margin-right: 4rem;
-  }
-
-  &--card__4 &--side-note {
-    width: 30rem;
-    margin-right: 16rem;
-  }
-
-  &--card__5 &--side-note {
-    margin-right: 25.5rem;
-  }
-
-  &--card &--login-error,
-  &--card &--signup-error {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    grid-template-rows: max-content;
-    column-gap: 0.6rem;
-    align-items: center;
-
-    background-color: #e53232;
-    color: #fff;
-    border-radius: 6px;
-    padding: 1rem 1.4rem;
-    margin-left: 9rem;
-
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.25s ease;
-
-    h3,
-    p {
-      color: #fff;
-      font-size: 2rem;
-      line-height: 1;
-
-      margin: 0;
+    &--card__4 &--back-btn:link,
+    &--card__4 &--back-btn:visited {
+        margin-right: 55rem;
     }
-
-    .feather {
-      grid-column: 1 / 2;
-
-      margin-right: 0.8rem;
+    &--input-box {
+        display: grid;
+        grid-template-rows: repeat(2, max-content);
+        row-gap: 1.2rem;
+        margin-right: 5rem;
     }
-
-    h3 {
-      grid-column: 2 / 3;
+    &--card__4 &--input-box {
+        margin-right: 16rem;
     }
-
-    p {
-      grid-column: 3 / 4;
+    &--btn {
+        &:link,
+        &:visited {
+            outline: none;
+            border: none;
+            justify-self: center;
+            width: auto;
+            background-color: #fedf30;
+            color: #fff;
+            font-size: 2rem;
+            padding: 0.6rem 1.8rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            &:hover,
+            &:active {
+                transform: translateY(-5px);
+                background-color: #ddc32f;
+            }
+        }
+        &__icon:link,
+        &__icon:visited {
+            display: block;
+            background-color: transparent;
+            color: #000;
+            padding: 0;
+            border-radius: 0;
+            .feather {
+                width: 2.6rem;
+                height: 2.6rem;
+                color: #d0d0d0;
+                transition: color 0.2s ease;
+            }
+            &:hover,
+            &:active {
+                background-color: transparent;
+                transform: none;
+                .feather {
+                    color: #afafaf;
+                }
+            }
+            &:focus .feather {
+                color: #4fc123;
+            }
+        }
     }
-
-    &.open {
-      visibility: visible;
-      opacity: 1;
+    &--card__2 &--btn:link,
+    &--card__2 &--btn:visited {
+        text-align: center;
+        width: 18rem;
     }
-  }
-
-  &--themes-parent {
-    display: grid;
-    grid-template-columns: repeat(2, min-content);
-    column-gap: 3rem;
-  }
-
-  &--theme-box {
-    display: grid;
-    row-gap: 0.6rem;
-
-    &__1 {
-      grid-column: 1 / 2 !important;
+    &--card__3 &--btn:link,
+    &--card__3 &--btn:visited {
+        margin-right: 25rem;
     }
-
-    &__2 {
-      grid-column: 2 / 3 !important;
+    &--card__4 &--btn:link,
+    &--card__4 &--btn:visited {
+        margin-right: 37rem;
     }
-
-    img {
-      grid-row: 1 / 2;
-      width: 25rem;
-      height: auto !important;
+    &--card__5 &--btn:link,
+    &--card__5 &--btn:visited {
+        margin-right: 38.5rem;
     }
-
-    h4,
-    a {
-      grid-row: 2 / 3;
-      line-height: 1;
-      margin: 0 !important;
+    &--side-note {
+        margin-top: -1rem;
+        font-size: 1.6rem;
+        font-weight: 300;
     }
-
-    h4 {
-      justify-self: start !important;
-
-      font-size: 2.4rem;
-      font-weight: 500;
+    &--card__3 &--side-note {
+        margin-right: 4rem;
     }
-
-    a {
-      justify-self: end !important;
+    &--card__4 &--side-note {
+        width: 30rem;
+        margin-right: 16rem;
     }
-  }
+    &--card__5 &--side-note {
+        margin-right: 25.5rem;
+    }
+    &--card &--login-error,
+    &--card &--signup-error {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        grid-template-rows: max-content;
+        column-gap: 0.6rem;
+        align-items: center;
+        background-color: #e53232;
+        color: #fff;
+        border-radius: 6px;
+        padding: 1rem 1.4rem;
+        margin-left: 9rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.25s ease;
+        h3,
+        p {
+            color: #fff;
+            font-size: 2rem;
+            line-height: 1;
+            margin: 0;
+        }
+        .feather {
+            grid-column: 1 / 2;
+            margin-right: 0.8rem;
+        }
+        h3 {
+            grid-column: 2 / 3;
+        }
+        p {
+            grid-column: 3 / 4;
+        }
+        &.open {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &--themes-parent {
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        column-gap: 3rem;
+    }
+    &--theme-box {
+        display: grid;
+        row-gap: 0.6rem;
+        &__1 {
+            grid-column: 1 / 2 !important;
+        }
+        &__2 {
+            grid-column: 2 / 3 !important;
+        }
+        img {
+            grid-row: 1 / 2;
+            width: 25rem;
+            height: auto !important;
+        }
+        h4,
+        a {
+            grid-row: 2 / 3;
+            line-height: 1;
+            margin: 0 !important;
+        }
+        h4 {
+            justify-self: start !important;
+            font-size: 2.4rem;
+            font-weight: 500;
+        }
+        a {
+            justify-self: end !important;
+        }
+    }
 }

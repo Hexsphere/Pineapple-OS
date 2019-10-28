@@ -5,12 +5,6 @@ import { showDesktop } from './desktop';
 
 // CODE
 document.addEventListener('DOMContentLoaded', () => {
-  document.exitFullscreen().catch(e => {});
-
-  document.mozCancelFullScreen
-    ? document.mozCancelFullScreen().catch(e => {})
-    : null;
-
   document.addEventListener('click', toggleFullScreen);
 
   if (
@@ -128,12 +122,14 @@ window.startSignup = () => {
       }
     });
 };
+
 function preparingDesktopProgressBar(prev) {
   transitionBootScreen(prev, elements.bootScreen8);
   progressBar(elements.progressBarInnerDesktop, () => {
     showDesktop();
   });
 }
+
 window.startLogin = () => {
   cloud
     .getSession(elements.loginUsername.value, elements.loginPassword.value)
@@ -178,9 +174,11 @@ window.transitionBootScreen = function transitionBootScreen(
 };
 
 const toggleFullScreen = () => {
+  removeEventListener('click', toggleFullScreen);
   if (elements.bootScreen1.classList.contains('open')) {
-    document.body.requestFullscreen();
-    removeEventListener('click', toggleFullScreen);
+    document.body.requestFullscreen
+      ? document.body.requestFullscreen()
+      : document.body.webkitRequestFullscreen();
 
     transitionBootScreen(elements.bootScreen1, elements.bootScreen2, 1300);
 
@@ -218,4 +216,25 @@ const bootLoader = () => {
       showDesktop();
     }
   }, (i + 1) * 50);
+  window.fullscreenStatus = true;
+  setInterval(() => {
+    if (!document.fullscreen && fullscreenStatus) {
+      var el =
+        document.querySelector('.desktop.open') ||
+        document.querySelector('.alerts > .open') ||
+        document.querySelector('.boot > .open');
+      transitionBootScreen(el, elements.fullScreenPrompt);
+      var listener = () => {
+        document.body.requestFullscreen
+          ? document.body.requestFullscreen()
+          : document.body.webkitRequestFullscreen();
+        transitionBootScreen(elements.fullScreenPrompt, el);
+        removeEventListener('click', listener);
+      };
+      setTimeout(() => {
+        addEventListener('click', listener);
+      }, 500);
+    }
+    fullscreenStatus = document.fullscreen;
+  }, 1000);
 };
