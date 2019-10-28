@@ -12,6 +12,10 @@ export function showDesktop() {
             // invalid token, prompt user to login again
             elements.desktop.classList.remove("open")
             elements.cloudError.classList.add("open")
+            elements.cloudErrorButton.addEventListener("click",()=>{
+              elements.cloudError.classList.remove("open")
+              elements.bootScreen3.classList.add("open")
+            })
         }
     })
 }

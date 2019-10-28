@@ -47,5 +47,6 @@ export const elements = {
   desktopClock: document.querySelector('.menu-bar--clock'),
 
   // ## cloud error
-  cloudError: document.querySelector('.cloud-error')
+  cloudError: document.querySelector('.cloud-error'),
+  cloudErrorButton: document.querySelector('.cloud-error--btn')
 };

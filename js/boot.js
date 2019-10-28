@@ -57,7 +57,7 @@ elements.nextBtn5.addEventListener('click', () => {
 // Finish setup button
 elements.nextBtn6.addEventListener('click', () => {
   transitionBootScreen(elements.bootScreen7, elements.bootScreen8);
-  preparingDesktopProgressBar(elements.bootScreen5)
+  preparingDesktopProgressBar(elements.bootScreen5);
 });
 
 elements.colorThemeBtns.forEach(e => {
@@ -128,11 +128,11 @@ window.startSignup = () => {
       }
     });
 };
-function preparingDesktopProgressBar(prev){
-    transitionBootScreen(prev, elements.bootScreen8);
-    progressBar(elements.progressBarInnerDesktop,()=>{
-        showDesktop()
-    })
+function preparingDesktopProgressBar(prev) {
+  transitionBootScreen(prev, elements.bootScreen8);
+  progressBar(elements.progressBarInnerDesktop, () => {
+    showDesktop();
+  });
 }
 window.startLogin = () => {
   cloud
@@ -190,7 +190,7 @@ const toggleFullScreen = () => {
   }
 };
 
-function progressBar(progressBarInner,cb = ()=>{}) {
+function progressBar(progressBarInner, cb = () => {}) {
   for (var i = 0; i < 100; i++) {
     var c = Math.random() * 10;
     setTimeout(
@@ -203,7 +203,7 @@ function progressBar(progressBarInner,cb = ()=>{}) {
     i += c;
   }
   setTimeout(() => {
-      cb()
+    cb();
   }, (i + 1) * 50);
   return i;
 }

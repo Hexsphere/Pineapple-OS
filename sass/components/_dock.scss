@@ -11,34 +11,41 @@
   grid-template-columns: repeat(9, 10rem);
   grid-template-rows: 100%;
   display: grid;
-  & .dock--app {
+
+  &--app {
     grid-template-columns: 1.5rem 3rem 1rem 3rem 1.5rem;
     grid-template-rows: 1rem 7rem 0.5rem 1rem 0.5rem;
     display: grid;
     width: 10rem;
     height: 10rem;
-    & .dock--app__open-indicator {
-      height:1rem;
-      width:1rem;
+
+    &__open-indicator {
       grid-column: 3;
       grid-row: 4;
-      background:rgba(0,0,0,.35);
+
+      height: 1rem;
+      width: 1rem;
+
+      background: rgba(0, 0, 0, 0.35);
       border-radius: 50%;
       visibility: hidden;
       opacity: 0;
+
       &.open {
-        opacity:1;
+        opacity: 1;
         visibility: visible;
       }
     }
-    & .dock--app-icon-container {
+
+    &-icon-container {
       grid-column: 2 / 5;
       grid-row: 2;
-      background:grey;
+      background: #808080;
       border-radius: 50%;
       padding: 2.25rem;
+
       .feather {
-        height:2.5rem;
+        height: 2.5rem;
       }
     }
   }
