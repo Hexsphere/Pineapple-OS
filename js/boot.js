@@ -165,7 +165,7 @@ window.startLogin = () => {
 window.transitionBootScreen = function transitionBootScreen(
   currentElement,
   nextElement,
-  delay = 400
+  delay = 150
 ) {
   currentElement.classList.remove('open');
   window.setTimeout(() => {
