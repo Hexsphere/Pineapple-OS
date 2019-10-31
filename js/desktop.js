@@ -1,14 +1,10 @@
+// IMPORTS & DATA
 import { elements } from './base';
 import * as cloud from './wrappers';
 import moment from 'moment';
 var internalData = {};
-export function showDesktop() {
-  elements.desktop.classList.add('open');
-  elements.bootScreen8.classList.remove('open');
-  check();
-  setInterval(check, 60000);
-}
 
+// CODE
 function check() {
   cloud
     .get(localStorage.getItem('username'), localStorage.getItem('token'))
@@ -26,6 +22,15 @@ function check() {
       }
     });
 }
+
+export function showDesktop() {
+  elements.desktop.classList.add('open');
+  elements.bootScreen8.classList.remove('open');
+
+  check();
+  setInterval(check, 60000);
+}
+
 const updatePrimaryClock = () => {
   elements.desktopClock.childNodes[1].textContent = moment().format('h:mm A');
 };

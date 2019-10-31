@@ -5,21 +5,21 @@ import { showDesktop } from './desktop';
 
 // CODE
 document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('click', toggleFullScreen);
-
-  if (
-    document.fullscreen ||
-    document.mozFullScreen ||
-    (window.innerWidth == screen.width && window.innerHeight == screen.height)
-  ) {
-    window.setTimeout(() => {
-      elements.bootScreen2.classList.add('open');
-    }, 400);
-  } else {
-    window.setTimeout(() => {
-      elements.bootScreen1.classList.add('open');
-    }, 400);
-  }
+  // document.addEventListener('click', toggleFullScreen);
+  
+  // if (
+  //   document.fullscreen ||
+  //   document.mozFullScreen ||
+  //   (window.innerWidth == screen.width && window.innerHeight == screen.height)
+  // ) {
+  //   window.setTimeout(() => {
+  //     elements.bootScreen2.classList.add('open');
+  //   }, 400);
+  // } else {
+  //   window.setTimeout(() => {
+  //     elements.bootScreen1.classList.add('open');
+  //   }, 400);
+  // }
 });
 
 // Get started button
@@ -180,11 +180,11 @@ const toggleFullScreen = () => {
       ? document.body.requestFullscreen()
       : document.body.webkitRequestFullscreen();
 
-    transitionBootScreen(elements.bootScreen1, elements.bootScreen2, 1300);
+    transitionBootScreen(elements.bootScreen1, elements.bootScreen2, 400);
 
     window.setTimeout(() => {
       bootLoader();
-    }, 2100);
+    }, 1000);
   }
 };
 
@@ -216,19 +216,21 @@ const bootLoader = () => {
       showDesktop();
     }
   }, (i + 1) * 50);
+
   window.fullscreenStatus = true;
   setInterval(() => {
     if (!document.fullscreen && fullscreenStatus) {
-      var el =
-        document.querySelector('.desktop.open') ||
-        document.querySelector('.alerts > .open') ||
-        document.querySelector('.boot > .open');
-      transitionBootScreen(el, elements.fullScreenPrompt);
+      elements.alerts.classList.add('open');
+      elements.fullScreenAlert.classList.add('open');
+
       var listener = () => {
         document.body.requestFullscreen
           ? document.body.requestFullscreen()
           : document.body.webkitRequestFullscreen();
-        transitionBootScreen(elements.fullScreenPrompt, el);
+
+        elements.alerts.classList.remove('open');
+        elements.fullScreenAlert.classList.remove('open');
+
         removeEventListener('click', listener);
       };
       setTimeout(() => {

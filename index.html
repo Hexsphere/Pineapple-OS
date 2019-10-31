@@ -223,69 +223,40 @@
     </div>
 
     <div class="alerts">
-      <div class="alerts--alert cloud-error">
-        <div class="cloud-error--card alerts--card">
-          <i data-feather="cloud-off" class="cloud-error--icon"></i>
-          <h3>Cloud Account Sync Error</h3>
-          <p>
-            It seems like you are logged out of the cloud or your account has
-            been deleted. Please use the button below to log in or create a new
-            account.
-            <br /><br />
-
-            <a href="#" class="cloud-error--btn"
-              >Clear settings and start setup</a
-            >
-          </p>
-        </div>
-      </div>
-
-      <div class="alerts--alert fullscreen-prompt">
+      <div class="alerts--alert alerts--alert__cloud-error">
         <div class="alerts--card">
-          <i data-feather="monitor" class="alerts--icon"></i>
-          <h3>Fullscreen off</h3>
-          <p>Click to continue.</p>
-        </div>
-      </div>
+          <i data-feather="cloud-off"></i>
 
-      <div class="alerts--alert feedback-assistant">
-        <div class="alerts--card">
-          <i data-feather="smile" class="alerts--icon"></i>
-          <h3>Feedback Assistant</h3>
+          <h3>Cloud Sync Error</h3>
           <p>
-            <textarea
-              class="feedback-assistant--textarea alerts--textarea"
-            ></textarea
-            ><br /><br />
-
-            <a href="#" class="feedback-assistant--btn__open alerts--btn"
-              >Open mail client with template</a
-            >
-            <a href="#" class="feedback-assistant--btn__cancel alerts--btn"
-              >Cancel</a
-            >
+            No cloud sync account was found on your browser storage. Please log
+            in or sign up again.
           </p>
+
+          <a href="#" class="alerts--btn">Clear settings and start setup</a>
         </div>
       </div>
 
-      <div class="alerts--alert cloud-error">
-        <div class="cloud-error--card">
-          <i data-feather="cloud-off" class="cloud-error--icon"></i>
-          <h3>Cloud Account Sync Error</h3>
-          <p>
-            It seems like you are logged out of the cloud or your account has
-            been deleted. Please use the button below to log in or create a new
-            account.<br /><br />
+      <div class="alerts--alert alerts--alert__fullscreen-prompt">
+        <div class="alerts--card">
+          <i data-feather="minimize"></i>
 
-            <a href="#" class="cloud-error--btn"
-              >Clear settings and start setup</a
-            >
+          <h3>Your browser isn’t in fullscreen!</h3>
+          <p>
+            Fullscreen is required in order to use Pineapple OS. Please click
+            anywhere on the page to re-enable full screen.
           </p>
         </div>
       </div>
     </div>
 
     <div class="desktop">
+      <div class="tooltips">
+        <div class="tooltips--tooltip">
+          <h3>Tooltip Title</h3>
+        </div>
+      </div>
+
       <div class="menu-bar">
         <div class="menu-bar--clock">
           <h3>00:00</h3>
@@ -293,24 +264,54 @@
 
         <ul class="menu-bar--icons">
           <li>
-            <a href="#" class="menu-bar--icon__feedback"
+            <a
+              href="#"
+              data-tooltip="Send Feedback"
+              class="menu-bar--icon__feedback"
               ><i data-feather="smile"></i
             ></a>
           </li>
           <li>
-            <a href="#"><i data-feather="cloud"></i></a>
+            <a href="#" data-tooltip="Cloud Sync"
+              ><i data-feather="cloud"></i
+            ></a>
           </li>
           <li>
-            <a href="#"><i data-feather="power"></i></a>
+            <a href="#" data-tooltip="Power Options"
+              ><i data-feather="power"></i
+            ></a>
           </li>
         </ul>
       </div>
 
-      <div class="apps"></div>
+      <div class="apps">
+        <div class="apps--app apps--app__feedback-assistant">
+          <div class="alerts--card">
+            <i data-feather="smile" class="alerts--icon"></i>
+            <h3>Feedback Assistant</h3>
+            <p>
+              <textarea
+                class="feedback-assistant--textarea alerts--textarea"
+              ></textarea
+              ><br /><br />
+
+              <a href="#" class="feedback-assistant--btn__open alerts--btn"
+                >Open mail client with template</a
+              >
+              <a href="#" class="feedback-assistant--btn__cancel alerts--btn"
+                >Cancel</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div class="dock">
-        <div class="dock--app">
-          <div class="dock--app-icon-container dock--app-icon-container__1">
+        <div class="dock--app open">
+          <div
+            class="dock--app-icon-container dock--app-icon-container__1"
+            data-tooltip="Settings"
+          >
             <i data-feather="settings"></i>
           </div>
 
@@ -318,7 +319,10 @@
         </div>
 
         <div class="dock--app">
-          <div class="dock--app-icon-container dock--app-icon-container__2">
+          <div
+            class="dock--app-icon-container dock--app-icon-container__2"
+            data-tooltip="App Store"
+          >
             <i data-feather="shopping-bag"></i>
           </div>
 
@@ -326,7 +330,10 @@
         </div>
 
         <div class="dock--app">
-          <div class="dock--app-icon-container dock--app-icon-container__3">
+          <div
+            class="dock--app-icon-container dock--app-icon-container__3"
+            data-tooltip="Text Editor"
+          >
             <i data-feather="file-text"></i>
           </div>
 

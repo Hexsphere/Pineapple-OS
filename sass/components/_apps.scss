@@ -1,0 +1,17 @@
+.apps {
+  grid-column: 1 / -1;
+  grid-row: 1 / 4;
+
+  height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+
+  @include hidden_on_hover(0.2s);
+
+  &.open {
+    z-index: 1;
+  }
+}

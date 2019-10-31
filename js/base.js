@@ -1,5 +1,7 @@
 export const elements = {
   // ## Boot elements
+  boot: document.querySelector('boot'),
+
   // Boot screens
   bootScreen1: document.querySelector('.boot--screen__1'),
   bootScreen2: document.querySelector('.boot--screen__2'),
@@ -43,13 +45,25 @@ export const elements = {
 
   // ## Desktop elements
   desktop: document.querySelector('.desktop'),
+
   // Clock
   desktopClock: document.querySelector('.menu-bar--clock'),
 
-  // ## cloud error
-  cloudError: document.querySelector('.cloud-error'),
-  cloudErrorButton: document.querySelector('.cloud-error--btn'),
-  // ## feedback assistant
+  // ## Alerts & Popups
+  alerts: document.querySelector('.alerts'),
+
+  // Cloud Error
+  cloudError: document.querySelector('.alerts--alert__cloud-error'),
+  cloudErrorButton: document.querySelector(
+    '.alerts--alert__cloud-error .alerts--btn'
+  ),
+
+  // Full Screen Alert
+  fullScreenAlert: document.querySelector('.alerts--alert__fullscreen-prompt'),
+
+  // ## Apps
+
+  // Feedback Assistant
   feedbackAssistant: document.querySelector('.feedback-assistant'),
   feedbackAssistantCancelButton: document.querySelector(
     '.feedback-assistant--btn__cancel'
@@ -63,5 +77,8 @@ export const elements = {
   feedbackAssistantTopbarButton: document.querySelector(
     '.menu-bar--icon__feedback'
   ),
-  fullScreenPrompt: document.querySelector('.fullscreen-prompt')
+
+  // ## Tooltips
+  tooltips: document.querySelector('.tooltips'),
+  tooltipElements: document.querySelectorAll('[data-tooltip]')
 };

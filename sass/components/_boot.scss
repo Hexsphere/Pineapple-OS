@@ -20,9 +20,7 @@
     align-content: center;
     row-gap: 1.4rem;
 
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.25s ease;
+    @include hidden_on_hover(0.25s);
 
     h3 {
       color: #fff;
@@ -39,11 +37,6 @@
 
     &__2 {
       row-gap: 2.4rem;
-    }
-
-    &.open {
-      visibility: visible;
-      opacity: 1;
     }
   }
 
@@ -312,9 +305,7 @@
     padding: 1rem 1.4rem;
     margin-left: 9rem;
 
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.25s ease;
+    @include hidden_on_hover(0.25s);
 
     h3,
     p {
@@ -337,11 +328,6 @@
 
     p {
       grid-column: 3 / 4;
-    }
-
-    &.open {
-      visibility: visible;
-      opacity: 1;
     }
   }
 

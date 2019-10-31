@@ -1,0 +1,11 @@
+@mixin hidden_on_hover($time) {
+  visibility: hidden;
+  opacity: 0;
+
+  transition: visibility $time ease, opacity $time ease;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}

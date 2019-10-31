@@ -1,0 +1,35 @@
+.tooltips {
+  grid-column: 1 / -1;
+  grid-row: 1 / 4;
+
+  height: 100vh;
+  width: 100%;
+
+  &--tooltip {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 12%;
+    left: 43.5%;
+
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 2.8rem rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.2s ease;
+
+    h3 {
+      font-size: 2rem;
+      color: #000;
+      line-height: 1;
+    }
+  }
+
+  &.open &--tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
